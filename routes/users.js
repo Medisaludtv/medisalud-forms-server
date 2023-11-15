@@ -4,3 +4,5 @@ const router = express.Router()
 const { login } = require('../controllers/usersController')
 
 router.get('/login', login)
+
+module.exports = router

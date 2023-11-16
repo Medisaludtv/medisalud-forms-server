@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 require('dotenv').config()
 const connectToDB = () => {
   mongoose
@@ -23,6 +24,18 @@ connectToDB()
 
 const port = 3000
 const app = express()
+
+app.use(
+  cors({
+    origin: [
+      'http://localhost:8100',
+      'https://localhost:8100',
+      'http://localhost',
+      'https://localhost'
+    ],
+    methods: ['GET', 'POST', 'OPTIONS']
+  })
+)
 
 const usersRouter = require('./routes/users')
 

@@ -2,6 +2,9 @@ const mongoose = require('mongoose')
 
 const UsersSchema = mongoose.Schema(
   {
+    _id: {
+      type: String
+    },
     name: {
       type: String
     },
@@ -23,6 +26,6 @@ const UsersSchema = mongoose.Schema(
   }
 )
 
-const Users = mongoose.model('Users', UsersSchema)
+const Users = mongoose.model('users', UsersSchema)
 
 module.exports = { Users }

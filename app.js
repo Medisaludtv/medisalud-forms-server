@@ -44,5 +44,5 @@ const usersRouter = require('./routes/users')
 app.use('/users', usersRouter)
 
 app.listen(port, () => {
-  console.log('Server listening on port', port)
+  console.log('Server listening on portt', port)
 })

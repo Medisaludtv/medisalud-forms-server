@@ -25,9 +25,5 @@
         "Access-Control-Allow-Origin": "*"
       }
     }
-  ],
-  "env": {
-    "AWS_S3_MAX_FILE_SIZE": "50mb",
-    "MAX_PAYLOAD_SIZE": "50mb"
-  }
+  ]
 }

@@ -61,8 +61,10 @@ export function verifyToken(req, res, next) {
 }
 
 const usersRouter = require('./routes/users')
+const docsRouter = require('./routes/docs')
 
 app.use('/users', usersRouter)
+app.use('docs', docsRouter)
 
 app.listen(port, () => {
   console.log('Server listening on portt', port)

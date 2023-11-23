@@ -12,7 +12,7 @@ const login = async (req, res) => {
     const token = jwt.sign(
       { user: user },
       process.env.JWT_SECRET,
-      { expiresIn: "1m" } // El token expira en 1 día
+      { expiresIn: "1h" } // El token expira en 1 día
     );
     
     res.setHeader("Content-Type", "application/json");

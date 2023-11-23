@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 
 
 const uploadForm = async (req, res) => {
+console.log(req.body);
 await Docs.create(req.body);
 }
 

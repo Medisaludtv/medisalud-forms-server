@@ -4,6 +4,6 @@ const router = express.Router()
 
 router.post('/uploadForm', uploadForm)
 router.post('/uploadDoc', uploadDoc)
-router.post('/getClientForms', getClientForms)
+router.get('/getClientForms', getClientForms)
 
 module.exports = router

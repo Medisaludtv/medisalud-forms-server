@@ -131,6 +131,14 @@ const DocsSchema = mongoose.Schema(
     form_id: {
       type: String,
       default: ''
+    },
+    ncl: {
+      type: String,
+      default: null
+    },
+    isMedicalSigned: {
+      type: Boolean,
+      default: false
     }
   }
 )

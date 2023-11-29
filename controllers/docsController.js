@@ -12,6 +12,7 @@ const uploadDoc = async (req, res) => {
 const getClientForms = async (req, res) => {
   try {
     const forms = await Docs.find({ ncl: { $in: [null, ''] } })
+    console.log(forms)
     res.status(200).json({ forms })
   } catch (err) {
     res.status(400).json({ error: err })

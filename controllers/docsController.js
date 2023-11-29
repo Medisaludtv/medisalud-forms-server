@@ -10,6 +10,7 @@ const uploadDoc = async (req, res) => {
 }
 
 const getClientForms = async (req, res) => {
+  console.log('hola')
   try {
     const forms = await Docs.find({ ncl: { $in: [null, ''] } })
     console.log(forms)

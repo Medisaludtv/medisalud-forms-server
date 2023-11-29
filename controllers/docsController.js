@@ -9,4 +9,13 @@ const uploadDoc = async (req, res) => {
   console.log(req.body)
 }
 
-module.exports = { uploadForm, uploadDoc }
+const getClientForms = async (req, res) => {
+  try {
+    const forms = await Docs.find({ ncl: { $in: [null, ''] } })
+    res.status(200).json({ forms })
+  } catch (err) {
+    res.status(400).json({ error: err })
+  }
+}
+
+module.exports = { uploadForm, uploadDoc, getClientForms }

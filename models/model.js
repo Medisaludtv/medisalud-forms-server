@@ -50,7 +50,7 @@ const DocsSchema = mongoose.Schema(
     },
     dispositivo_metalico_texto: {
       type: String,
-      default: ""
+      default: ''
     },
     diu: {
       type: Boolean,
@@ -70,7 +70,7 @@ const DocsSchema = mongoose.Schema(
     },
     hemorragias_texto: {
       type: String,
-      default: ""
+      default: ''
     },
     infarto: {
       type: Boolean,
@@ -82,11 +82,11 @@ const DocsSchema = mongoose.Schema(
     },
     infeccion_texto: {
       type: String,
-      default: ""
+      default: ''
     },
     libre_enfermedad: {
       type: String,
-      default: "false"
+      default: 'false'
     },
     marcapasos: {
       type: Boolean,
@@ -94,7 +94,7 @@ const DocsSchema = mongoose.Schema(
     },
     name: {
       type: String,
-      default: "Alberto"
+      default: 'Alberto'
     },
     otras_cardiopatias: {
       type: Boolean,
@@ -102,7 +102,7 @@ const DocsSchema = mongoose.Schema(
     },
     otras_cardiopatias_texto: {
       type: String,
-      default: ""
+      default: ''
     },
     otros_dispositivos: {
       type: Boolean,
@@ -110,7 +110,7 @@ const DocsSchema = mongoose.Schema(
     },
     otros_dispositivos_texto: {
       type: String,
-      default: ""
+      default: ''
     },
     proceso_oncologico: {
       type: Boolean,
@@ -118,7 +118,7 @@ const DocsSchema = mongoose.Schema(
     },
     proceso_oncologico_texto: {
       type: String,
-      default: ""
+      default: ''
     },
     stens: {
       type: Boolean,
@@ -126,7 +126,11 @@ const DocsSchema = mongoose.Schema(
     },
     surname: {
       type: String,
-      default: "Moreno"
+      default: 'Moreno'
+    },
+    form_id: {
+      type: String,
+      default: ''
     }
   }
 )
@@ -134,7 +138,7 @@ const DocsSchema = mongoose.Schema(
 const Users = mongoose.model('users', UsersSchema)
 const Docs = mongoose.model('docs', DocsSchema)
 
-module.exports = { 
+module.exports = {
   Users,
   Docs
 }

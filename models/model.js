@@ -86,7 +86,7 @@ const DocsSchema = mongoose.Schema(
     },
     libre_enfermedad: {
       type: String,
-      default: 'false'
+      default: ''
     },
     marcapasos: {
       type: Boolean,
@@ -94,7 +94,7 @@ const DocsSchema = mongoose.Schema(
     },
     name: {
       type: String,
-      default: 'Alberto'
+      default: ''
     },
     otras_cardiopatias: {
       type: Boolean,
@@ -126,7 +126,7 @@ const DocsSchema = mongoose.Schema(
     },
     surname: {
       type: String,
-      default: 'Moreno'
+      default: ''
     },
     form_id: {
       type: String,

@@ -26,7 +26,7 @@ const UsersSchema = mongoose.Schema(
   }
 )
 
-const docsSchema = new mongoose.Schema({
+const DocsSchema = new mongoose.Schema({
   // First patient
   namec1: { type: String, required: true },
   surnamec1: { type: String, required: true },

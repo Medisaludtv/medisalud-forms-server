@@ -50,6 +50,10 @@ const DocsSchema = new mongoose.Schema({
     dispositivo_metalicoc1: { type: Boolean },
     dispositivo_metalico_texto_c1: { type: String },
     diuc1: { type: Boolean },
+    ncl1: { type: String },
+    apto1: { type: Boolean },
+    libre_enfermedad1: { type: Boolean },
+    aportacion_medico1: { type: String },
   
     // Second patient
     namec2: { type: String },
@@ -74,6 +78,13 @@ const DocsSchema = new mongoose.Schema({
     dispositivo_metalicoc2: { type: Boolean },
     dispositivo_metalico_texto_c2: { type: String },
     diuc2: { type: Boolean },  
+    ncl2: { type: String },
+    apto2: { type: Boolean },
+    libre_enfermedad2: { type: Boolean },
+    aportacion_medico: { type: String },
+
+    //COMÚN 
+    firmado_medico: { type: Boolean }
 })
 
 const Users = mongoose.model('users', UsersSchema)

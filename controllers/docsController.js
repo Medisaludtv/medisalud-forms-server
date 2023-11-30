@@ -2,6 +2,7 @@ const { Docs } = require('../models/model')
 
 const uploadForm = async (req, res) => {
   try {
+    console.log(req.body)
     const createdDocument = await Docs.create(req.body);
     const id = createdDocument._id;
     console.log(id)

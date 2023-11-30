@@ -3,9 +3,10 @@ const { Docs } = require('../models/model')
 const uploadForm = async (req, res) => {
   try {
     const createdDocument = await Docs.create(req.body);
+    console.log(createdDocument)
     const _id = createdDocument._id;
 
-    res.status(200).json({ uploaded: true, _id });
+    res.status(200).json({ uploaded: true, id: _id });
   } catch (err) {
     res.status(400).json({ uploaded: false, error: err });
   }

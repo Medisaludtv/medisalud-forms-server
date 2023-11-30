@@ -73,7 +73,7 @@ const DocsSchema = new mongoose.Schema({
     coagulopatiasc2: { type: Boolean },
     hemorragiasc2: { type: Boolean },
     hemorragias_texto_c2: { type: String },
-    infeccionc2: { type: Boolean },
+    infeccionc2: { type: Boolean }, 
     infeccion_texto_c2: { type: String },
     dispositivo_metalicoc2: { type: Boolean },
     dispositivo_metalico_texto_c2: { type: String },

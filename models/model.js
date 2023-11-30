@@ -26,122 +26,55 @@ const UsersSchema = mongoose.Schema(
   }
 )
 
-const DocsSchema = mongoose.Schema(
-  {
-    anginas: {
-      type: Boolean,
-      default: false
-    },
-    apto: {
-      type: Boolean,
-      default: true
-    },
-    birthday: {
-      type: Date,
-      default: Date.now
-    },
-    coagulopatias: {
-      type: Boolean,
-      default: false
-    },
-    dispositivo_metalico: {
-      type: Boolean,
-      default: false
-    },
-    dispositivo_metalico_texto: {
-      type: String,
-      default: ''
-    },
-    diu: {
-      type: Boolean,
-      default: false
-    },
-    embarazo: {
-      type: Boolean,
-      default: false
-    },
-    epilepsia: {
-      type: Boolean,
-      default: false
-    },
-    hemorragias: {
-      type: Boolean,
-      default: false
-    },
-    hemorragias_texto: {
-      type: String,
-      default: ''
-    },
-    infarto: {
-      type: Boolean,
-      default: false
-    },
-    infeccion: {
-      type: Boolean,
-      default: false
-    },
-    infeccion_texto: {
-      type: String,
-      default: ''
-    },
-    libre_enfermedad: {
-      type: String,
-      default: ''
-    },
-    marcapasos: {
-      type: Boolean,
-      default: false
-    },
-    name: {
-      type: String,
-      default: ''
-    },
-    otras_cardiopatias: {
-      type: Boolean,
-      default: false
-    },
-    otras_cardiopatias_texto: {
-      type: String,
-      default: ''
-    },
-    otros_dispositivos: {
-      type: Boolean,
-      default: false
-    },
-    otros_dispositivos_texto: {
-      type: String,
-      default: ''
-    },
-    proceso_oncologico: {
-      type: Boolean,
-      default: false
-    },
-    proceso_oncologico_texto: {
-      type: String,
-      default: ''
-    },
-    stens: {
-      type: Boolean,
-      default: false
-    },
-    surname: {
-      type: String,
-      default: ''
-    },
-    form_id: {
-      type: String,
-      default: ''
-    },
-    ncl: {
-      type: String,
-      default: null
-    },
-    isMedicalSigned: {
-      type: Boolean,
-      default: false
-    }
-  }
-)
+const docsSchema = new mongoose.Schema({
+  // First patient
+  namec1: { type: String, required: true },
+  surnamec1: { type: String, required: true },
+  birthdayc1: { type: Date, required: true },
+  marcapasosc1: { type: Boolean, default: false },
+  otros_dispositivosc1: { type: Boolean, default: false },
+  otros_dispositivos_texto_c1: { type: String, default: '' },
+  stensc1: { type: Boolean, default: false },
+  infartoc1: { type: Boolean, default: false },
+  anginasc1: { type: Boolean, default: false },
+  otras_cardiopatiasc1: { type: Boolean, default: false },
+  otras_cardiopatias_texto_c1: { type: String, default: '' },
+  proceso_oncologicoc1: { type: Boolean, default: false },
+  epilepsiac1: { type: Boolean, default: false },
+  embarazoc1: { type: Boolean, default: false },
+  coagulopatiasc1: { type: Boolean, default: false },
+  hemorragiasc1: { type: Boolean, default: false },
+  hemorragias_texto_c1: { type: String, default: '' },
+  infeccionc1: { type: Boolean, default: false },
+  infeccion_texto_c1: { type: String, default: '' },
+  dispositivo_metalicoc1: { type: Boolean, default: false },
+  dispositivo_metalico_texto_c1: { type: String, default: '' },
+  diuc1: { type: Boolean, default: false },
+
+  // Second patient
+  namec2: { type: String, required: true },
+  surnamec2: { type: String, required: true },
+  birthdayc2: { type: Date, required: true },
+  marcapasosc2: { type: Boolean, default: false },
+  otros_dispositivosc2: { type: Boolean, default: false },
+  otros_dispositivos_texto_c2: { type: String, default: '' },
+  stensc2: { type: Boolean, default: false },
+  infartoc2: { type: Boolean, default: false },
+  anginasc2: { type: Boolean, default: false },
+  otras_cardiopatiasc2: { type: Boolean, default: false },
+  otras_cardiopatias_texto_c2: { type: String, default: '' },
+  proceso_oncologicoc2: { type: Boolean, default: false },
+  epilepsiac2: { type: Boolean, default: false },
+  embarazoc2: { type: Boolean, default: false },
+  coagulopatiasc2: { type: Boolean, default: false },
+  hemorragiasc2: { type: Boolean, default: false },
+  hemorragias_texto_c2: { type: String, default: '' },
+  infeccionc2: { type: Boolean, default: false },
+  infeccion_texto_c2: { type: String, default: '' },
+  dispositivo_metalicoc2: { type: Boolean, default: false },
+  dispositivo_metalico_texto_c2: { type: String, default: '' },
+  diuc2: { type: Boolean, default: false },
+})
 
 const Users = mongoose.model('users', UsersSchema)
 const Docs = mongoose.model('docs', DocsSchema)

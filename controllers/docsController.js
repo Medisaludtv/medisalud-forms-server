@@ -4,8 +4,7 @@ const uploadForm = async (req, res) => {
   try {
     const createdDocument = await Docs.create(req.body);
     const id = createdDocument._id;
-    console.log(createdDocument)
-
+    console.log(id)
     res.status(200).json({ uploaded: true, id: id });
   } catch (err) {
     res.status(400).json({ uploaded: false, error: err });

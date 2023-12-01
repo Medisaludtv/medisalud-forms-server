@@ -13,6 +13,20 @@ const uploadDoc = async (req, res) => {
   console.log(req.body)
 }
 
+const getFormByID = async (req, res) => {
+  try {
+    const id = req.body.id
+    const form = await Docs.findById(id)
+    if (!form) {
+      res.status(404).json({ error: 'Formulario no encontrado' })
+    } else {
+      res.status(200).json({ form })
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+}
+
 const getClientForms = async (req, res) => {
   try {
     const forms = await Docs.find({ ncl: { $in: [null, ''] } })
@@ -40,4 +54,4 @@ const getMedicalSignedForms = async (req, res) => {
   }
 }
 
-module.exports = { uploadForm, uploadDoc, getClientForms, getNCLForms, getMedicalSignedForms }
+module.exports = { uploadForm, uploadDoc, getClientForms, getNCLForms, getMedicalSignedForms, getFormByID }

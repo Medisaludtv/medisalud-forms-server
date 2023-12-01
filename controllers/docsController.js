@@ -16,6 +16,7 @@ const uploadDoc = async (req, res) => {
 const getFormByID = async (req, res) => {
   try {
     const id = req.body
+    console.log(id)
     const form = await Docs.findById(id)
     if (!form) {
       res.status(404).json({ error: 'Formulario no encontrado' })

@@ -81,7 +81,7 @@ const DocsSchema = new mongoose.Schema({
   ncl2: { type: String },
   apto2: { type: Boolean },
   libre_enfermedad2: { type: Boolean },
-  aportacion_medico: { type: String },
+  aportacion_medico2: { type: String },
 
   // COMÚN
   firmado_medico: { type: Boolean }

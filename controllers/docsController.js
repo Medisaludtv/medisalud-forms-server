@@ -14,7 +14,8 @@ const uploadDoc = async (req, res) => {
 }
 
 const getFormByID = async (req, res) => {
-  try {
+  console.log(req.body)
+  /* try {
     const id = req.body
     console.log(id)
     const form = await Docs.findById(id)
@@ -25,7 +26,7 @@ const getFormByID = async (req, res) => {
     }
   } catch (err) {
     res.status(500).json({ error: err.message })
-  }
+  } */
 }
 
 const getClientForms = async (req, res) => {

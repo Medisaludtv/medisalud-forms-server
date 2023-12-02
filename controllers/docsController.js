@@ -9,12 +9,10 @@ const uploadForm = async (req, res) => {
     res.status(400).json({ uploaded: false, error: err })
   }
 }
-const uploadDoc = async (req, res) => {
-  console.log(req.body)
-}
 
 const getFormByID = async (req, res) => {
   console.log(req.body)
+  return req.body
   /* try {
     const id = req.body
     console.log(id)
@@ -56,4 +54,4 @@ const getMedicalSignedForms = async (req, res) => {
   }
 }
 
-module.exports = { uploadForm, uploadDoc, getClientForms, getNCLForms, getMedicalSignedForms, getFormByID }
+module.exports = { uploadForm, getClientForms, getNCLForms, getMedicalSignedForms, getFormByID }

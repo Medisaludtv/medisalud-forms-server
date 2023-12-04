@@ -13,8 +13,9 @@ const uploadForm = async (req, res) => {
 const updateForm = async (req, res) => {
   try {
     const formValues = req.body.formValues
+    const id = formValues._id
     await Docs.findByIdAndUpdate(formValues._id, formValues);
-    res.status(200).json({ updated: true })
+    res.status(200).json({ updated: true, id })
   } catch (err) {
     res.status(400).json({ updated: false, error: err })
   }

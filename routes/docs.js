@@ -3,6 +3,7 @@ const { uploadForm, getClientForms, getNCLForms, getMedicalSignedForms, getFormB
 const router = express.Router()
 
 router.post('/uploadForm', uploadForm)
+router.post('/updateForm', updateForm)
 router.post('/getFormByID', getFormByID)
 router.get('/getClientForms', getClientForms)
 router.get('/getNCLForms', getNCLForms)

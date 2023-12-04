@@ -61,4 +61,4 @@ const getMedicalSignedForms = async (req, res) => {
   }
 }
 
-module.exports = { uploadForm, getClientForms, getNCLForms, getMedicalSignedForms, getFormByID }
+module.exports = { uploadForm, getClientForms, getNCLForms, getMedicalSignedForms, getFormByID, updateForm }

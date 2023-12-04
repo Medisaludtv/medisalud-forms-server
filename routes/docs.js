@@ -1,5 +1,5 @@
 const express = require('express')
-const { uploadForm, getClientForms, getNCLForms, getMedicalSignedForms, getFormByID } = require('../controllers/docsController')
+const { uploadForm, getClientForms, getNCLForms, getMedicalSignedForms, getFormByID, updateForm } = require('../controllers/docsController')
 const router = express.Router()
 
 router.post('/uploadForm', uploadForm)

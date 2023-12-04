@@ -36,7 +36,7 @@ const getFormByID = async (req, res) => {
 
 const getClientForms = async (req, res) => {
   try {
-    const forms = await Docs.find({ ncl: { $in: [null, ''] } })
+    const forms = await Docs.find({ $and: [{ ncl1: { $in: [null, ''] } }, { ncl2: { $in: [null, ''] } }] })
     res.status(200).json({ forms })
   } catch (err) {
     res.status(400).json({ error: err })
@@ -45,7 +45,7 @@ const getClientForms = async (req, res) => {
 
 const getNCLForms = async (req, res) => {
   try {
-    const forms = await Docs.find({ ncl: { $ne: null } })
+    const forms = await Docs.find({ $and: [{ ncl1: { $ne: null } }, { ncl2: { $ne: null } }] })
     res.status(200).json({ forms })
   } catch (err) {
     res.status(400).json({ error: err })

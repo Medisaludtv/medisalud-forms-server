@@ -46,7 +46,7 @@ const getClientForms = async (req, res) => {
 
 const getNCLForms = async (req, res) => {
   try {
-    const forms = await Docs.find({ $and: [{ ncl1: { $ne: null } }, { ncl2: { $ne: null } },{ firmado_medico: { $in: false } }] })
+    const forms = await Docs.find({ $and: [{ ncl1: { $ne: '' } }, { ncl2: { $ne: '' } },{ firmado_medico: { $in: false } }] })
     res.status(200).json({ forms })
   } catch (err) {
     res.status(400).json({ error: err })

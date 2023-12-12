@@ -84,7 +84,8 @@ const DocsSchema = new mongoose.Schema({
     aportacion_medico: { type: String },
 
     //COMÚN 
-    firmado_medico: { type: Boolean }
+    firmado_medico: { type: Boolean },
+    ciudad: {type: String},
 })
 
 const Users = mongoose.model('users', UsersSchema)

@@ -2,20 +2,42 @@ const { Docs } = require('../models/model')
 
 const uploadForm = async (req, res) => {
   try {
-    const createdDocument = await Docs.create(req.body.formValues);
-    const id = createdDocument._id;
-    res.status(200).json({ uploaded: true, id: id });
+    const createdDocument = await Docs.create(req.body.formValues)
+    const id = createdDocument._id
+    res.status(200).json({ uploaded: true, id })
   } catch (err) {
-    res.status(400).json({ uploaded: false, error: err });
+    res.status(400).json({ uploaded: false, error: err })
   }
-};
-const uploadDoc = async (req, res) => {
-  console.log(req.body)
+}
+
+const updateForm = async (req, res) => {
+  try {
+    const formValues = req.body.formValues
+    const id = formValues._id
+    await Docs.findByIdAndUpdate(formValues._id, formValues);
+    res.status(200).json({ updated: true, id })
+  } catch (err) {
+    res.status(400).json({ updated: false, error: err })
+  }
+}
+
+const getFormByID = async (req, res) => {
+  try {
+    const id = req.body.formID
+    const form = await Docs.findById(id)
+    if (!form) {
+      res.status(404).json({ error: 'Formulario no encontrado' })
+    } else {
+      res.status(200).json({ form })
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
 }
 
 const getClientForms = async (req, res) => {
   try {
-    const forms = await Docs.find({ ncl: { $in: [null, ''] } })
+    const forms = await Docs.find({ $and: [{ ncl1: { $in: [null, ''] } }, { ncl2: { $in: [null, ''] } }] })
     res.status(200).json({ forms })
   } catch (err) {
     res.status(400).json({ error: err })
@@ -24,7 +46,7 @@ const getClientForms = async (req, res) => {
 
 const getNCLForms = async (req, res) => {
   try {
-    const forms = await Docs.find({ ncl: { $ne: null } })
+    const forms = await Docs.find({ $and: [{ ncl1: { $ne: '' } }, { ncl2: { $ne: '' } },{ firmado_medico: { $in: false } }] })
     res.status(200).json({ forms })
   } catch (err) {
     res.status(400).json({ error: err })
@@ -33,11 +55,11 @@ const getNCLForms = async (req, res) => {
 
 const getMedicalSignedForms = async (req, res) => {
   try {
-    const forms = await Docs.find({ isMedicalSigned: { $in: true } })
+    const forms = await Docs.find({ firmado_medico: { $in: true } })
     res.status(200).json({ forms })
   } catch (err) {
     res.status(400).json({ error: err })
   }
 }
 
-module.exports = { uploadForm, uploadDoc, getClientForms, getNCLForms, getMedicalSignedForms }
+module.exports = { uploadForm, getClientForms, getNCLForms, getMedicalSignedForms, getFormByID, updateForm }

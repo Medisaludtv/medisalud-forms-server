@@ -6,9 +6,9 @@ const uploadForm = async (req, res) => {
     const formValues = req.body.formValues;
 
     const documentData = {
-      [ciudad]: {
-        [fecha]: formValues,
-      },
+      "ciudad": {
+        ...formValues
+      }
     };
 
     const createdDocument = await Docs.create(documentData);

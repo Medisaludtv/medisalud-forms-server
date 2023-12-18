@@ -2,13 +2,24 @@ const { Docs } = require('../models/model')
 
 const uploadForm = async (req, res) => {
   try {
-    const createdDocument = await Docs.create(req.body.formValues)
-    const id = createdDocument._id
-    res.status(200).json({ uploaded: true, id })
+    const { ciudad, fecha } = req.body.formValues; // Assuming these are part of the route parameters
+    const formValues = req.body.formValues;
+
+    // Include the route parameters in the document
+    const documentData = {
+      ciudad,
+      fecha,
+      ...formValues,
+    };
+
+    const createdDocument = await Docs.create(documentData);
+    const id = createdDocument._id;
+
+    res.status(200).json({ uploaded: true, id });
   } catch (err) {
-    res.status(400).json({ uploaded: false, error: err })
+    res.status(400).json({ uploaded: false, error: err.message || err });
   }
-}
+};
 
 const updateForm = async (req, res) => {
   try {

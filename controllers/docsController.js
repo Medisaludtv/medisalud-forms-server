@@ -7,7 +7,7 @@ const uploadForm = async (req, res) => {
 
     const documentData = {
       "ciudad": {
-        ...formValues
+        formValues
       }
     };
 

@@ -7,9 +7,11 @@ const uploadForm = async (req, res) => {
 
     // Include the route parameters in the document
     const documentData = {
-      ciudad,
-      fecha,
-      ...formValues,
+      ciudad: {
+        fecha: {
+          ...formValues
+        }
+      }
     };
 
     const createdDocument = await Docs.create(documentData);

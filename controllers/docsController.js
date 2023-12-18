@@ -5,16 +5,7 @@ const uploadForm = async (req, res) => {
     const { ciudad, fecha } = req.body.formValues; // Assuming these are part of the route parameters
     const formValues = req.body.formValues;
 
-    // Include the route parameters in the document
-    const documentData = {
-      [city]: {
-        [date]: {
-          [object]: formValues,
-        },
-      },
-    };
-
-    const createdDocument = await Docs.create(documentData);
+    const createdDocument = await Docs.create(formValues);
     const id = createdDocument._id;
 
     res.status(200).json({ uploaded: true, id });

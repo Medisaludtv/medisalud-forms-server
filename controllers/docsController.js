@@ -2,22 +2,9 @@ const { Docs } = require('../models/model')
 
 const uploadForm = async (req, res) => {
   try {
-    const { ciudad, fecha } = req.body.formValues;
     const formValues = req.body.formValues;
 
-    const documentData = {
-      [ciudad]: [
-        {
-          [fecha]: [
-            {
-              formValues
-            }
-          ]
-        }
-      ]
-    };
-
-    const createdDocument = await Docs.create(documentData);
+    const createdDocument = await Docs.create(formValues);
     const id = createdDocument._id;
 
     res.status(200).json({ uploaded: true, id });

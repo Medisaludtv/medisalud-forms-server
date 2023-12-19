@@ -3,23 +3,15 @@ const { Docs } = require('../models/model')
 const uploadForm = async (req, res) => {
   try {
     const formValues = req.body.formValues;
-    const ciudad = formValues.ciudad; // Suponiendo que el formulario incluye la ciudad
-    const dia = formValues.fecha; // Suponiendo que el formulario incluye el día
 
-    // Guardar el formulario en la ubicación deseada
-    const createdDocument = await Docs.updateOne(
-      { ciudad: ciudad },
-      { $push: { [`dias.${dia}`]: formValues } },
-      { upsert: true }
-    );
-
+    const createdDocument = await Docs.create(formValues);
     const id = createdDocument._id;
 
     res.status(200).json({ uploaded: true, id });
   } catch (err) {
     res.status(400).json({ uploaded: false, error: err.message || err });
   }
-}
+};
 
 const updateForm = async (req, res) => {
   try {

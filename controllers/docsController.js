@@ -7,13 +7,15 @@ const uploadForm = async (req, res) => {
     const dia = formValues.fecha; // Suponiendo que el formulario incluye el día
 
     // Guardar el formulario en la ubicación deseada
-    await Docs.updateOne(
+    const createdDocument = await Docs.updateOne(
       { ciudad: ciudad },
       { $push: { [`dias.${dia}`]: formValues } },
       { upsert: true }
     );
 
-    res.status(200).json({ uploaded: true });
+    const id = createdDocument._id;
+
+    res.status(200).json({ uploaded: true, id });
   } catch (err) {
     res.status(400).json({ uploaded: false, error: err.message || err });
   }

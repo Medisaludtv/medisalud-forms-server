@@ -7,6 +7,6 @@ router.post('/updateForm', updateForm)
 router.post('/getFormByID', getFormByID)
 router.get('/getClientForms', getClientForms)
 router.get('/getNCLForms', getNCLForms)
-router.get('/getMedicalSignedForms', getMedicalSignedForms)
+router.post('/getMedicalSignedForms', getMedicalSignedForms)
 
 module.exports = router

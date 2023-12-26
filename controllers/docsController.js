@@ -59,7 +59,7 @@ const getNCLForms = async (req, res) => {
 const getMedicalSignedForms = async (req, res) => {
   try {
     const {ciudad, fecha} = req.body;
-    console.log(ciudad, fecha)
+    console.log(req.body)
     const forms = await Docs.find({ firmado_medico: { $in: true }, ciudad: ciudad, fecha: fecha })
     res.status(200).json({ forms })
   } catch (err) {

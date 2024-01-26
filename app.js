@@ -67,5 +67,5 @@ app.use('/users', usersRouter)
 app.use('/docs', docsRouter)
 
 app.listen(port, () => {
-  console.log('Server listening on portt', port)
+  console.log('Server listening on port', port)
 })

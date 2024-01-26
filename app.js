@@ -5,13 +5,9 @@ const cors = require('cors')
 const jwt = require('jsonwebtoken')
 require("dotenv").config();
 const connectToDB = () => {
-  const username = process.env.DB_USERNAME
-  const password = process.env.DB_PASSWORD
-  console.log(username)
-  console.log(password)
   mongoose
     .connect(
-      `mongodb+srv://${username}:${password}@medisalud-forms-databas.bkiq68s.mongodb.net/?retryWrites=true&w=majority`,
+      `mongodb+srv://adminMedisalud:Lf77GG0VH0pUPdVDb@medisalud-forms-databas.bkiq68s.mongodb.net/?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true

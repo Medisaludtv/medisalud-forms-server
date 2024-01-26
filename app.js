@@ -6,10 +6,12 @@ const jwt = require('jsonwebtoken')
 require("dotenv").config();
 const connectToDB = () => {
   const username = process.env.DB_USERNAME
+  const password = process.env.DB_PASSWORD
   console.log(username)
+  console.log(password)
   mongoose
     .connect(
-      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@medisalud-forms-databas.bkiq68s.mongodb.net/?retryWrites=true&w=majority`,
+      `mongodb+srv://${username}:${password}@medisalud-forms-databas.bkiq68s.mongodb.net/?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true

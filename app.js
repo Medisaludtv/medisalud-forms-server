@@ -3,11 +3,13 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
-require('dotenv').config()
+require("dotenv").config();
 const connectToDB = () => {
+  const username = process.env.DB_USERNAME
+  console.log(username)
   mongoose
     .connect(
-      `mongodb+srv://adminMedisalud:Lf77GG0VH0pUPdVDb@medisalud-forms-databas.bkiq68s.mongodb.net/?retryWrites=true&w=majority`,
+      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@medisalud-forms-databas.bkiq68s.mongodb.net/?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true

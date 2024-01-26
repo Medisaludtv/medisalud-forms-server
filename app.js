@@ -7,7 +7,7 @@ require('dotenv').config()
 const connectToDB = () => {
   mongoose
     .connect(
-      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@medisalud-forms-databas.bkiq68s.mongodb.net/medisalud-forms-db?retryWrites=true&w=majority`,
+      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@medisalud-forms-databas.bkiq68s.mongodb.net/?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -17,6 +17,7 @@ const connectToDB = () => {
       console.log('Conexión exitosa a la base de datos')
     })
     .catch((error) => {
+      console.error(process.env.DB_USERNAME)
       console.error('Error al conectar a la base de datos:', error)
       connectToDB()
     })

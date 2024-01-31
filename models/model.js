@@ -89,7 +89,7 @@ const DocsSchema = new mongoose.Schema({
   fecha: { type: String }
 })
 
-const Users = mongoose.model('users', UsersSchema)
+const Users = mongoose.model('users', UsersSchema, "medisalud-forms-db")
 const Docs = mongoose.model('docs', DocsSchema)
 
 module.exports = {
